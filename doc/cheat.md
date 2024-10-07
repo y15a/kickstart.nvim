@@ -5,6 +5,10 @@ This is a personal cheat sheet for my own NeoVIM setup.
 
 ## Just Discovered
 
+### VIM
+
+`:bd` [B]uffer [D]elete - close the current buffer.
+
 
 ### Fuzzy Search
 
