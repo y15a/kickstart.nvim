@@ -152,7 +152,12 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
+
+-- Turn off 'virtual text' error messages
+vim.diagnostic.config({
+  virtual_text = false
+})
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
