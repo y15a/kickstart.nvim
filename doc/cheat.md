@@ -34,6 +34,9 @@ This is a personal cheat sheet for my own NeoVIM setup.
 `<leader>e` Show [E]rror messages - from LSP etc. Status is showin in the gutter
 
 
+## Familiarising
+
+
 ### Window Navigation
 
 `<C-h>` Move focus to the left window
@@ -43,9 +46,6 @@ This is a personal cheat sheet for my own NeoVIM setup.
 `<C-j>` Move focus to the lower window
 
 `<C-k>` Move focus to the upper window
-
-
-## Familiarising
 
 
 ### Navigation
