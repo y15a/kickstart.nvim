@@ -28,7 +28,6 @@ This is a personal cheat sheet for my own NeoVIM setup.
 `<leader>e` Show [E]rror messages - from LSP etc. Status is showin in the gutter
 
 
-
 ## Familiarising
 
 
