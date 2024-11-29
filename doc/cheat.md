@@ -19,19 +19,17 @@ This is a personal cheat sheet for my own NeoVIM setup.
 
 ### Language Server
 
-`gd` [G]o to [D]efinition
-
-`gr` [G]o to [R]eference
-
 `<leader>D` Type [D]efinition - definition of a variable's type
 
 `<leader>ds` [D]ocument [S]ymbols - list variables, function, types etc.
 
 `<leader>rn` [R]e[N]ame - built-in refactoring functionality
 
-`K` Hover Documentation
-
 `<leader>e` Show [E]rror messages - from LSP etc. Status is showin in the gutter
+
+
+
+## Familiarising
 
 
 ### Window Navigation
@@ -45,20 +43,24 @@ This is a personal cheat sheet for my own NeoVIM setup.
 `<C-k>` Move focus to the upper window
 
 
-## Familiarising
-
-
-### Navigation
-
-`<C-o>` Go back to a previous view
-
-
 ### Fuzzy Search
 
 `<leader><leader>` Find in existing buffers
 
 
+### Language Server
+
+`K` Hover Documentation
+
+
 ## Daily Driving
+
+
+### Language Server
+
+`gd` [G]o to [D]efinition
+
+`gr` [G]o to [R]eference
 
 
 ### Fuzzy Search
@@ -68,6 +70,9 @@ This is a personal cheat sheet for my own NeoVIM setup.
 `<leader>sg` [S]earch by [G]rep
 
 
+### Navigation
+
+`<C-o>` Go back to a previous view
 
 
 
