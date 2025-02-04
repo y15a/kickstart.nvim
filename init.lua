@@ -572,6 +572,18 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         pylsp = {
+          on_new_config = function(new_config, new_root_dir)
+            local util = require("lspconfig.util")
+            -- Detect and use local virtualenv Python if available
+            local venv = util.path.join(new_root_dir, ".venv")
+            if vim.fn.isdirectory(venv) == 1 then
+              local python_bin = util.path.join(venv, "bin", "python")
+              new_config.cmd = { python_bin, "-m", "pylsp" }
+              vim.notify("pylsp override: " .. table.concat(new_config.cmd, " "))
+            else
+              vim.notify("No venv found at: " .. venv .. " -> using default pylsp")
+            end
+          end,
           on_attach = on_attach,
           settings = {
             pylsp = {
