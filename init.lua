@@ -580,6 +580,7 @@ require('lazy').setup({
                   enabled = true,
                   live_mode = true,
                 },
+                pycodestyle = { enabled = false },
               },
             },
           },
