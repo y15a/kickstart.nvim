@@ -585,6 +585,18 @@ require('lazy').setup({
             }
           }
         },
+        mypy = {
+          on_attach = on_attach,
+          settings = {
+            python = {
+              mypy = {
+                liveMode = true,
+              },
+              venvPath = ".",
+              venv = ".venv"
+            }
+          }
+        },
         bashls = {},
         html = {},
         eslint = {},
