@@ -571,17 +571,18 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
-        mypy = {
+        pylsp = {
           on_attach = on_attach,
           settings = {
-            python = {
-              mypy = {
-                liveMode = true,
+            pylsp = {
+              plugins = {
+                pylsp_mypy = {
+                  enabled = true,
+                  live_mode = true,
+                },
               },
-              venvPath = ".",
-              venv = ".venv"
-            }
-          }
+            },
+          },
         },
         bashls = {},
         html = {},
