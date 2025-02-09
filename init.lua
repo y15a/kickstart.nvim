@@ -571,32 +571,44 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
-        pylsp = {
-          on_new_config = function(new_config, new_root_dir)
-            local util = require("lspconfig.util")
-            -- Detect and use local virtualenv Python if available
-            local venv = util.path.join(new_root_dir, ".venv")
-            if vim.fn.isdirectory(venv) == 1 then
-              local python_bin = util.path.join(venv, "bin", "python")
-              new_config.cmd = { python_bin, "-m", "pylsp" }
-              vim.notify("pylsp override: " .. table.concat(new_config.cmd, " "))
-            else
-              vim.notify("No venv found at: " .. venv .. " -> using default pylsp")
-            end
-          end,
+        pyright = {
           on_attach = on_attach,
           settings = {
-            pylsp = {
-              plugins = {
-                pylsp_mypy = {
-                  enabled = true,
-                  live_mode = true,
-                },
-                pycodestyle = { enabled = false },
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "workspace"
               },
             },
-          },
+          }
         },
+--         pylsp = {
+--           on_new_config = function(new_config, new_root_dir)
+--             local util = require("lspconfig.util")
+--             -- Detect and use local virtualenv Python if available
+--             local venv = util.path.join(new_root_dir, ".venv")
+--             if vim.fn.isdirectory(venv) == 1 then
+--               local python_bin = util.path.join(venv, "bin", "python")
+--               new_config.cmd = { python_bin, "-m", "pylsp" }
+--               vim.notify("pylsp override: " .. table.concat(new_config.cmd, " "))
+--             else
+--               vim.notify("No venv found at: " .. venv .. " -> using default pylsp")
+--             end
+--           end,
+--           on_attach = on_attach,
+--           settings = {
+--             pylsp = {
+--               plugins = {
+--                 pylsp_mypy = {
+--                   enabled = true,
+--                   live_mode = true,
+--                 },
+--                 pycodestyle = { enabled = false },
+--               },
+--             },
+--           },
+--         },
         bashls = {},
         html = {},
         eslint = {},
